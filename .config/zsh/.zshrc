@@ -118,5 +118,8 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+#Git extra completions
+source /usr/local/opt/git-extras/share/git-extras/git-extras-completion.zsh
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
