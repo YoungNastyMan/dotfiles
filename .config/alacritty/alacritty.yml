@@ -236,7 +236,7 @@ shell:
   args:
     - --login
     - -c
-    - "tmux attach || tmux"
+    - "tmux attach -f ~/.config/tmux/.tmux.conf || tmux -f ~/.config/tmux/.tmux.conf"
 
 # Key bindings
 #
@@ -282,6 +282,7 @@ key_bindings:
       mods: Command,
       command: { program: "open", args: ["-nb", "io.alacritty"] },
     }
+  - { key: K, mods: Command, chars: "\x0c" }
   - { key: Home, chars: "\x1bOH", mode: AppCursor }
   - { key: Home, chars: "\x1b[H", mode: ~AppCursor }
   - { key: End, chars: "\x1bOF", mode: AppCursor }
@@ -385,7 +386,6 @@ key_bindings:
   - { key: W, mods: Command, chars: "\x06\x78" }
   - { key: H, mods: Command, chars: "\x06\x68" }
   - { key: J, mods: Command, chars: "\x06\x6a" }
-  - { key: K, mods: Command, chars: "\x06\x6b" }
   - { key: L, mods: Command, chars: "\x06\x6c" }
   - { key: T, mods: Command, chars: "\x06\x63" }
   - { key: RBracket, mods: Command|Shift, chars: "\x06\x6e" }
