@@ -5,8 +5,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+#Exports
 export PATH="/usr/local/bin:${PATH}"
+export GIT_CONFIG=~/.config/git/.gitconfig
 
+#Alias
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # Lines configured by zsh-newuser-install

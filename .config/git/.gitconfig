@@ -1,0 +1,12 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = Anand Hegde
+	email = anandrhegde21@gmail.com
+	signingkey = A01F14ED222BB319
+[core]
+	excludesfile = ~/.gitignore
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[commit]
+	gpgsign = true
