@@ -7,7 +7,6 @@ fi
 
 #Exports
 export PATH="/usr/local/bin:${PATH}"
-export GIT_CONFIG=~/.config/git/.gitconfig
 
 #Alias
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
