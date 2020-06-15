@@ -122,4 +122,4 @@ unset __conda_setup
 source /usr/local/opt/git-extras/share/git-extras/git-extras-completion.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
