@@ -6,10 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 #Exports
-export PATH="/usr/local/bin:${PATH}"
-
-#Alias
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+[[ -f "$ZDOTDIR/exports.zsh" ]] && source "$ZDOTDIR/exports.zsh"
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.zsh_history
@@ -19,7 +16,7 @@ setopt  autocd extendedglob notify
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/Users/ahegde/.zshrc'
+zstyle :compinstall filename '${HOME}/.zshrc'
 
 fpath+=~/.zfunc
 
@@ -51,46 +48,9 @@ function fh() {
     eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
 }
 
-###
-
-### zgen
-
-export NVM_DIR="$HOME/.nvm"
-export NVM_LAZY_LOAD=true
-
-source "${HOME}/.zgen/zgen.zsh"
-
-if ! zgen saved; then
-
-  # general plugins
-  zgen load unixorn/autoupdate-zgen
-  zgen load romkatv/powerlevel10k powerlevel10k
-  zgen load zsh-users/zsh-autosuggestions  
-  zgen load zsh-users/zsh-completions
-  zgen load rolling-space/zulu-utility
-  zgen load hlissner/zsh-autopair
-  zgen load zsh-users/zsh-syntax-highlighting
-  zgen load zlsun/solarized-man
-  zgen load rupa/z
-  zgen load zulu-zsh/plugin-git
-  zgen load zulu-zsh/plugin-z-cd
-  zgen load zsh-users/zsh-history-substring-search
-  zgen load lukechilds/zsh-nvm
-
-  #OSX stuff
-  zgen load rolling-space/zulu-homebrew
-  zgen load iam4x/zsh-iterm-touchbar
-
-
-  #bind keys
-  bindkey '^[[A' history-substring-search-up
-  bindkey '^[[B' history-substring-search-down
-
-  zgen save
-fi
-
-
-###
+########## Source plugins
+[[ -f "${CONFIG_PATH}/zsh/zgen.zsh" ]] && source "${CONFIG_PATH}/zsh/zgen.zsh"
+##########
 
 ### Keybindings
 bindkey "^[^[[D" backward-word
@@ -99,11 +59,8 @@ bindkey "^[^[[C" forward-word
 
 ### SDKMan
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/ahegde/.sdkman"
-[[ -s "/Users/ahegde/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/ahegde/.sdkman/bin/sdkman-init.sh"
- 
-### Theme
-###
+export SDKMAN_DIR="${HOME}/.sdkman"
+[[ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ]] && source "${HOME}/.sdkman/bin/sdkman-init.sh"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -123,5 +80,8 @@ unset __conda_setup
 #Git extra completions
 source /usr/local/opt/git-extras/share/git-extras/git-extras-completion.zsh
 
+#Alias
+[[ -f "${ZDOTDIR}/alias.zsh" ]] && source "${ZDOTDIR}/alias.zsh"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+[[ ! -f "${ZDOTDIR}/.p10k.zsh" ]] || source "${ZDOTDIR}/.p10k.zsh"
