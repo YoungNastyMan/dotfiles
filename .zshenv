@@ -1,4 +1,3 @@
 HOME=~
 CONFIG_PATH=$HOME/.config
 ZDOTDIR=$CONFIG_PATH/zsh
-
