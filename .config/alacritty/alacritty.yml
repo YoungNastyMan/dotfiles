@@ -382,8 +382,8 @@ shell:
   program: /usr/local/bin/zsh
   args:
     - --login
-    # - -c
-    # - "tmux attach -f ~/.config/tmux/.tmux.conf || tmux -f ~/.config/tmux/.tmux.conf"
+    - -c
+    - "tmux attach -f ~/.config/tmux/.tmux.conf || tmux -f ~/.config/tmux/.tmux.conf"
 
 # Startup directory
 #
