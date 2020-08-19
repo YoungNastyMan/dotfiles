@@ -9,14 +9,14 @@ fi
 [[ -f "$ZDOTDIR/exports.zsh" ]] && source "$ZDOTDIR/exports.zsh"
 
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.zsh_history
+HISTFILE="$ZDOTDIR/.zsh_history"
 HISTSIZE=10000
 SAVEHIST=10000
 setopt autocd extendedglob notify
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '${HOME}/.zshrc'
+zstyle :compinstall filename '${ZDOTDIR}/.zshrc'
 
 fpath+=~/.zfunc
 
