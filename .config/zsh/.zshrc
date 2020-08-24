@@ -77,9 +77,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-#Git extra completions
-source /usr/local/opt/git-extras/share/git-extras/git-extras-completion.zsh
-
 #Alias
 [[ -f "${ZDOTDIR}/alias.zsh" ]] && source "${ZDOTDIR}/alias.zsh"
 
