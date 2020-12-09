@@ -22,6 +22,7 @@ if ! zgen saved; then
     zgen load zulu-zsh/plugin-git
     zgen load zulu-zsh/plugin-z-cd
     zgen load zsh-users/zsh-history-substring-search
+    zgen load Aloxaf/fzf-tab
     zgen load lukechilds/zsh-nvm
 
     #OSX stuff
