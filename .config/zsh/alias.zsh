@@ -7,6 +7,6 @@ alias ocat='/bin/cat'
 alias cat='bat'
 alias ols='/bin/ls'
 alias ls='lsd'
-alias tree='exa --tree'
+alias tree='exa -la --tree'
 
 ###########
